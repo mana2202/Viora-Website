@@ -1,7 +1,7 @@
 # Terms of Service — Viora Retail (Stitch)
 
-**Effective Date:** [Insert Date]  
-**Last Updated:** [Insert Date]
+**Effective Date:** 06.12.2026 
+**Last Updated:** 06.12.2026
 
 These Terms of Service (“**Terms**”) govern your access to and use of the Stitch platform provided by Viora Retail (“**Company**,” “**we**,” “**our**,” or “**us**”) at https://vioraretail.com/ (the “**Service**”).
 

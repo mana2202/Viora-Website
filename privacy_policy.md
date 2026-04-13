@@ -1,7 +1,7 @@
 # Privacy Policy — Viora Retail (Stitch)
 
-**Effective Date:** [Insert Date]  
-**Last Updated:** [Insert Date]
+**Effective Date:** 06.12.2026 
+**Last Updated:** 06.12.2026
 
 Viora Retail (“**Company**,” “**we**,” “**our**,” or “**us**”) provides the Stitch platform at https://vioraretail.com/ (the “**Service**”).
 
