@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Viora — All-in-one apparel techpack auditing platform. Catch errors early, collaborate in real time, and move from prototype to production without the chaos." />
   <title>Viora — Apparel Techpack Auditing</title>
+  <link rel="icon" href="/Logo-backfill.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -177,6 +178,68 @@
     }
     .nav-links a:hover { color: var(--text); }
 
+    /* Products dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: color var(--transition);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      user-select: none;
+    }
+    .nav-dropdown-trigger svg {
+      transition: transform var(--transition);
+    }
+    .nav-dropdown:hover .nav-dropdown-trigger { color: var(--text); }
+    .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px;
+      min-width: 140px;
+      z-index: 200;
+    }
+    .nav-dropdown-menu-inner {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu-inner a,
+    .nav-dropdown-menu-inner span {
+      display: block;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 13px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu-inner a {
+      color: var(--muted);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-dropdown-menu-inner a:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+    .nav-dropdown-menu-inner span {
+      color: var(--muted);
+      opacity: 0.5;
+      cursor: default;
+    }
+
     .nav-cta { flex-shrink: 0; }
 
     /* Mobile hamburger */
@@ -223,6 +286,13 @@
     }
     .nav-mobile a:hover { color: var(--text); }
     .nav-mobile .btn { align-self: flex-start; margin-top: 4px; }
+    .mobile-products-sub {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 16px;
+    }
+    .mobile-sub-link { font-size: 13px !important; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
     #hero {
@@ -317,8 +387,7 @@
     }
 
     .features-header {
-      text-align: center;
-      margin-bottom: clamp(40px, 6vw, 72px);
+      margin-bottom: clamp(16px, 3vw, 28px);
     }
 
     .features-headline {
@@ -326,8 +395,24 @@
       font-size: clamp(28px, 4vw, 48px);
       letter-spacing: -0.02em;
       line-height: 1.15;
-      max-width: 360px;
-      margin-inline: auto;
+      max-width: 640px;
+    }
+
+    .features-intro {
+      max-width: 640px;
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+
+    .features-intro p {
+      font-family: var(--mono);
+      font-size: clamp(13px, 1.5vw, 14.5px);
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .features-intro p + p {
+      margin-top: 16px;
     }
 
     .features-grid {
@@ -350,17 +435,13 @@
       transform: translateY(-2px);
     }
 
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 18px;
+    .feature-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent-dk);
+      margin-bottom: 16px;
     }
 
     .feature-title {
@@ -513,6 +594,46 @@
       background-position: center;
     }
 
+    /* ─── About ─────────────────────────────────────────────────── */
+    #about {
+      padding-block: clamp(72px, 10vw, 120px);
+    }
+
+    .about-inner {
+      max-width: 760px;
+    }
+
+    .about-header {
+      margin-bottom: clamp(40px, 6vw, 64px);
+    }
+
+    .about-headline {
+      font-family: var(--sans);
+      font-size: clamp(32px, 5vw, 54px);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .about-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .about-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 28px;
+    }
+
+    .about-block p {
+      font-family: var(--mono);
+      font-size: clamp(13px, 1.5vw, 14.5px);
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
     /* ─── CTA Section ───────────────────────────────────────────── */
     #cta {
       padding-block: clamp(80px, 12vw, 140px);
@@ -606,12 +727,6 @@
     }
 
     /* ─── Stagger delays for feature cards ─────────────────────── */
-    .feature-card:nth-child(1) { transition-delay: 0s; }
-    .feature-card:nth-child(2) { transition-delay: 0.06s; }
-    .feature-card:nth-child(3) { transition-delay: 0.12s; }
-    .feature-card:nth-child(4) { transition-delay: 0.18s; }
-    .feature-card:nth-child(5) { transition-delay: 0.24s; }
-    .feature-card:nth-child(6) { transition-delay: 0.30s; }
   </style>
 </head>
 <body>
@@ -623,13 +738,27 @@
       <a href="#" class="nav-wordmark" aria-label="Viora home">Viora</a>
 
       <ul class="nav-links" role="list">
-        <li><a href="#features">Features</a></li>
+        <li class="nav-dropdown">
+          <span class="nav-dropdown-trigger">
+            Products
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="nav-dropdown-menu" role="menu">
+            <div class="nav-dropdown-menu-inner">
+              <a href="#features" role="menuitem">Stitch</a>
+              <span role="menuitem" aria-disabled="true">Coming Soon</span>
+            </div>
+          </div>
+        </li>
+        <li><a href="#about">About</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#cta">Contact Us</a></li>
       </ul>
 
-      <a href="https://vioraretail.com/stitch/login" class="btn btn-primary nav-cta" aria-label="Try Viora via email">
-        Try Viora
+      <a href="https://vioraretail.com/stitch/login" class="btn btn-primary nav-cta" aria-label="Try Stitch via email">
+        Try Stitch
       </a>
 
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
@@ -641,10 +770,17 @@
 
   <!-- Mobile menu -->
   <div class="nav-mobile" id="mobileMenu" aria-hidden="true">
-    <a href="#features" class="mobile-link">Features</a>
+    <div class="mobile-products">
+      <span class="mobile-link" style="color:var(--muted);cursor:default;">Products</span>
+      <div class="mobile-products-sub">
+        <a href="#features" class="mobile-link mobile-sub-link">Stitch</a>
+        <span class="mobile-link mobile-sub-link" style="opacity:0.4;cursor:default;">Coming Soon</span>
+      </div>
+    </div>
+    <a href="#about" class="mobile-link">About</a>
     <a href="#pricing" class="mobile-link">Pricing</a>
     <a href="#cta" class="mobile-link">Contact Us</a>
-    <a href="https://vioraretail.com/stitch/login" class="btn btn-primary">Try Viora</a>
+    <a href="https://vioraretail.com/stitch/login" class="btn btn-primary">Try Stitch</a>
   </div>
 
   <main>
@@ -663,7 +799,7 @@
 
         <div class="hero-actions reveal" style="transition-delay:0.24s">
           <a href="https://vioraretail.com/stitch/login" class="btn btn-accent btn-lg">
-            Try Viora
+            Try Stitch
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -681,48 +817,41 @@
       <div class="container">
 
         <div class="features-header">
-          <span class="label reveal">Features</span>
+          <span class="label reveal">Stitch</span>
           <h2 class="features-headline reveal" id="features-headline" style="transition-delay:0.06s">
-            Everything your team needs, nothing it doesn't
+            AI audit and collaboration for technical designers.
           </h2>
+        </div>
+
+        <div class="features-intro reveal" style="transition-delay:0.10s">
+          <p>A tech pack is a contract. Every missing measurement, every inconsistent callout, every forgotten revision is a gap between what you designed and what gets made. Stitch closes that gap.</p>
+          <p>Stitch holds the entire history — every version, every change, every decision — and flags the errors before they reach the factory floor.</p>
         </div>
 
         <div class="features-grid">
 
           <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">⚡</div>
-            <h3 class="feature-title">Move faster from concept to production</h3>
-            <p class="feature-desc">Eliminate endless back-and-forth. Viora brings designers, merchandisers, and manufacturers into one shared workspace so decisions happen faster and samples come back right the first time.</p>
+            <p class="feature-number">01</p>
+            <h3 class="feature-title">AI Audit</h3>
+            <p class="feature-desc">Stitch reads your tech pack and surfaces what is missing and what conflicts — inconsistencies between callouts and the BOM, absent annotations in sketches, grading discrepancies. Errors caught here do not become errors in production.</p>
           </article>
 
-          <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">🔍</div>
-            <h3 class="feature-title">Catch issues before they become costly</h3>
-            <p class="feature-desc">From missing specs to inconsistent measurements, Viora flags problems early — before they hit the factory floor and delay production cycles.</p>
+          <article class="feature-card reveal" style="transition-delay:0.06s">
+            <p class="feature-number">02</p>
+            <h3 class="feature-title">Version History</h3>
+            <p class="feature-desc">Every change is recorded. Revert to any prior version. See exactly what shifted between the sample you sent and the one you received. Nothing is lost. Nothing is forgotten.</p>
           </article>
 
-          <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">📄</div>
-            <h3 class="feature-title">Turn tech packs into living systems</h3>
-            <p class="feature-desc">No more static documents. Viora automatically extracts product attributes and keeps everything connected, so your data works for you across design, merchandising, and production.</p>
+          <article class="feature-card reveal" style="transition-delay:0.12s">
+            <p class="feature-number">03</p>
+            <h3 class="feature-title">Live Collaboration</h3>
+            <p class="feature-desc">Your team and manufacturing partners work in the same document. Feedback that once lived in email threads and scattered phone calls now lives where it belongs — the tech pack itself, with full context.</p>
           </article>
 
-          <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">💬</div>
-            <h3 class="feature-title">Collaborate without the chaos</h3>
-            <p class="feature-desc">Replace scattered emails and spreadsheets with real-time collaboration. Comments, edits, and updates stay in sync — so everyone is always working off the latest version.</p>
-          </article>
-
-          <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">🎛️</div>
-            <h3 class="feature-title">Designed for how teams actually work</h3>
-            <p class="feature-desc">Flexible views, structured data, and intuitive workflows — Viora adapts to your process instead of forcing you into one.</p>
-          </article>
-
-          <article class="feature-card reveal">
-            <div class="feature-icon" aria-hidden="true">🔗</div>
-            <h3 class="feature-title">Integrates into your existing stack</h3>
-            <p class="feature-desc">Plug Viora into your PLM, design tools, and communication workflows. No disruption — just better coordination and visibility across every team.</p>
+          <article class="feature-card reveal" style="transition-delay:0.18s">
+            <p class="feature-number">04</p>
+            <h3 class="feature-title">Change Summaries</h3>
+            <p class="feature-desc">Return to a tech pack after a week away and know immediately what changed since you last saw it. A clear, readable summary so you stay current across every style, every cycle, every season.</p>
           </article>
 
         </div>
@@ -768,7 +897,7 @@
               <li>Unlimited uploads</li>
               <li>Unlimited credits for AI Audit</li>
             </ul>
-            <a href="https://vioraretail.com/stitch/login" class="btn btn-accent" style="width:100%">Try Viora</a>
+            <a href="https://vioraretail.com/stitch/login" class="btn btn-accent" style="width:100%">Try Stitch</a>
           </div>
 
           <!-- Enterprise -->
@@ -789,17 +918,45 @@
       </div>
     </section>
 
+    <!-- ─── About ───────────────────────────────────────────────── -->
+    <section id="about" aria-labelledby="about-headline">
+      <div class="container">
+        <div class="about-inner">
+
+          <div class="about-header">
+            <span class="label reveal">About Viora</span>
+            <h2 class="about-headline reveal" id="about-headline" style="transition-delay:0.06s">
+              Fashion is a conversation between the designer and the customer.
+            </h2>
+          </div>
+
+          <div class="about-blocks">
+            <div class="about-block reveal" style="transition-delay:0.04s">
+              <p>Today, that conversation has no feedback loop. Viora closes it — connecting what is designed with what is worn, returned, and wanted — so that every new season begins with the truth of the last.</p>
+            </div>
+            <div class="about-block reveal" style="transition-delay:0.10s">
+              <p>Every season, brands send products into the world and receive back only fragments of truth — aggregate returns, blunt sell-through numbers, insufficient sizing data. Designers build next season's collection on a foundation of guesswork. Viora replaces that guesswork with intelligence.</p>
+            </div>
+            <div class="about-block reveal" style="transition-delay:0.16s">
+              <p>We connect pre-production to production to post-production — returns, deadstock, sell-through — and route what is learned back to the designers.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ─── CTA ────────────────────────────────────────────────── -->
     <section id="cta" aria-labelledby="cta-headline">
       <div class="container">
         <div class="cta-inner">
           <h2 class="cta-headline reveal" id="cta-headline">Ready to get started?</h2>
           <p class="cta-sub reveal" style="transition-delay:0.08s">
-            Try Viora for free. No credit card required.
+            Try Stitch for free. No credit card required.
           </p>
           <div class="reveal" style="transition-delay:0.16s">
             <a href="https://vioraretail.com/stitch/login" class="btn btn-accent btn-lg">
-              Try Viora
+              Try Stitch
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
